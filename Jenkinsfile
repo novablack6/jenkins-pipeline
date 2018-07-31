@@ -11,7 +11,7 @@ pipeline {
 
         stage('Compile') {
             steps {
-                sh './gradlew clean testCompile'
+                sh './gradlew clean testClasses'
             }
         }
 
