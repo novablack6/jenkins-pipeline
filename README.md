@@ -19,7 +19,8 @@
 
 ## Notes
 
-- Task downloading gradle wrapper may take longer for the first time due to large gradle wrapper zip file size.
+- Task downloading resources (gradle wrapper and jars) may take longer for the first time due to large download size.
+  Subsequent executions should be faster.
 
 ## References
 
