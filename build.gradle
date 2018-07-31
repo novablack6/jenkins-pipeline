@@ -1,0 +1,28 @@
+group 'pl.jojczykp'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    test.systemProperty 'env', System.getProperty('env')
+
+    useJUnitPlatform()
+
+    reports {
+        junitXml.enabled = true
+        junitXml.outputPerTestCase = true
+
+        html.enabled = true
+    }
+}
+
+dependencies {
+    testImplementation('org.junit.jupiter:junit-jupiter-api:5.2.0')
+    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.2.0')
+}
