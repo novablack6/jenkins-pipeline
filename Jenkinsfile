@@ -5,6 +5,7 @@ pipeline {
 
     options {
         timestamps()
+        withEnv(["OENV1='options-env-variable-1'"])
     }
 
     environment {
@@ -29,6 +30,7 @@ pipeline {
 
             steps {
                 echo "${TCONST1}"
+                echo "${OENV1}"
                 echo "${PENV1}"
                 echo "${PENV2}"
                 echo "${SENV1}"
