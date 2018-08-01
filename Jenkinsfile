@@ -5,11 +5,11 @@ pipeline {
 
     options {
         timestamps()
-        withEnv(["OENV1='options-env-variable-1'"])
+        withEnv(["OENV1=options-env-variable-1"])
     }
 
     environment {
-        PENV1 = 'pipeline-env-valiable-1'
+        PENV1 = "pipeline-env-valiable-1 + ${OENV1} "
         PENV2 = sh (
             script: 'echo pipeline-env-valiable-2',
             returnStdout: true
@@ -21,7 +21,7 @@ pipeline {
         stage('Test Environment Variables') {
 
             environment {
-                SENV1 = 'stage-env-valiable-1'
+                SENV1 = "stage-env-valiable-1 + ${OENV1}"
                 SENV2 = sh (
                     script: 'echo stage-env-valiable-2',
                     returnStdout: true
