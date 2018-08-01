@@ -1,7 +1,40 @@
+def TCONST1 = 'top-const-1'
+
 pipeline {
     agent any
 
+    options {
+        timestamps()
+    }
+
+    environment {
+        PENV1 = 'pipeline-env-valiable-1'
+        PENV2 = sh (
+            script: 'echo pipeline-env-valiable-2',
+            returnStdout: true
+        ).trim()
+    }
+
     stages {
+
+        stage('Test Environment Variables') {
+
+            environment {
+                SENV1 = 'stage-env-valiable-1'
+                SENV2 = sh (
+                    script: 'echo stage-env-valiable-2',
+                    returnStdout: true
+                ).trim()
+            }
+
+            steps {
+                echo "${TCONST1}"
+                echo "${PENV1}"
+                echo "${PENV2}"
+                echo "${SENV1}"
+                echo "${SENV2}"
+            }
+        }
 
         stage('Setup Gradle') {
             steps {
