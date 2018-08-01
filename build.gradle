@@ -17,8 +17,6 @@ test {
     reports {
         junitXml.enabled = true
         junitXml.outputPerTestCase = true
-
-        html.enabled = true
     }
 }
 
