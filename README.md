@@ -27,3 +27,4 @@
 - https://github.com/jenkinsci/docker/blob/master/README.md
 - https://github.com/arnaud-deprez/demo-jenkins-pipeline-gradle/blob/master/Jenkinsfile
 - https://www.youtube.com/watch?v=s73nhwYBtzE
+- https://github.com/jenkinsci/pipeline-model-definition-plugin/wiki/Reporting-test-results-and-storing-artifacts
