@@ -3,7 +3,7 @@ pipeline {
 
     stages {
 
-        stage('Verify Gradle Wrapper') {
+        stage('Setup Gradle') {
             steps {
                 sh './gradlew -v'
             }
