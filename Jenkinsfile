@@ -16,6 +16,7 @@ pipeline {
             script: 'echo pipeline-env-valiable-2',
             returnStdout: true
         ).trim()
+        GRADLE = "/opt/gradle/bin/gradle"
     }
 
     stages {
@@ -42,19 +43,19 @@ pipeline {
 
         stage('Setup Gradle') {
             steps {
-                sh 'gradle -v'
+                sh '${GRADLE} -v'
             }
         }
 
         stage('Compile') {
             steps {
-                sh 'gradle clean testClasses'
+                sh '${GRADLE} clean testClasses'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'gradle test'
+                sh '${GRADLE} test'
             }
             post {
                 always {
