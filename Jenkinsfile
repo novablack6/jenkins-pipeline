@@ -42,19 +42,19 @@ pipeline {
 
         stage('Setup Gradle') {
             steps {
-                sh './gradlew -v'
+                sh 'gradle -v'
             }
         }
 
         stage('Compile') {
             steps {
-                sh './gradlew clean testClasses'
+                sh 'gradle clean testClasses'
             }
         }
 
         stage('Test') {
             steps {
-                sh './gradlew test'
+                sh 'gradle test'
             }
             post {
                 always {
