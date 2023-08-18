@@ -1,7 +1,7 @@
 def TCONST1 = 'top-const-1'
 
 pipeline {
-    agent gradle
+    agent cts
 
     options {
         timestamps()
