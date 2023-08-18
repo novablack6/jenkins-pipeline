@@ -1,7 +1,9 @@
 def TCONST1 = 'top-const-1'
 
 pipeline {
-    agent cts
+    agent { 
+        cts
+    }
 
     options {
         timestamps()
